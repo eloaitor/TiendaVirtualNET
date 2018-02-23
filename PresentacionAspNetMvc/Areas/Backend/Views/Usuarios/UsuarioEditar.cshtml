@@ -1,0 +1,37 @@
+﻿@model TiendaVirtual.Entidades.Usuario
+@{
+    ViewBag.Title = "UsuarioEditar";
+}
+
+<h2>Editar el usuario</h2>
+
+<section id="usuarioEditar" class="row">
+
+    <div class="col-xs-12 col-sm-6">
+        <h3>@Html.DisplayFor(model => model.Nick)</h3>
+        @using (Html.BeginForm("Modificar", "Usuarios"))
+        {   @*<form id="frmProducto" action="/Usuarios/Modificar" class="form-inline" method="post">*@
+            <div class="form-group">
+                @Html.HiddenFor(model => model.Id)
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input class="form-control" type="text" name="id" id="id" value="@Html.DisplayFor(model => model.Id)" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label for="nick">Nick</label>
+                    <input class="form-control" type="text" name="nick" id="nick" value="@Html.DisplayFor(model => model.Nick)" />
+                </div>
+
+                <div class="form-group ">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="text" name="password" id="password" value="@Html.DisplayFor(model => model.Password)" />
+                </div>
+
+
+                <input type="submit" value="Modificar" class="btn btn-success" />
+            </div>
+        }
+    </div>
+
+</section>

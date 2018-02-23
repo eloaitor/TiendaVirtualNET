@@ -1,0 +1,36 @@
+﻿@model TiendaVirtual.Entidades.Producto
+
+@{
+    ViewBag.Title = "AnadirProducto";
+}
+
+<h2>Anadir producto</h2>
+
+<section id="anadirProducto" class="row">
+
+    <div class="col-xs-12 col-sm-6">
+        @using (Html.BeginForm("Anadir", "Productos"))
+        {   @*<form id="frmProducto" action="/Productos/Anadir" class="form-inline" method="post">*@
+            <div class="form-group">
+
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input class="form-control" type="number" name="id" id="id" placeholder="Id tiene que ser mayor a 20"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Tomate"/>
+                </div>
+
+                <div class="form-group ">
+                    <label for="precio">Precio</label>
+                    <input class="form-control" type="text" name="precio" id="precio" placeholder="1.25"/>
+                </div>
+
+                <input type="submit" value="Anadir" class="btn btn-success" />
+            </div>
+        }
+    </div>
+
+</section>
